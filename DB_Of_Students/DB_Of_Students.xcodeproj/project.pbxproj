@@ -23,6 +23,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DD5CDDC22A12871B007C64BA /* Class_Student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Class_Student.h; sourceTree = "<group>"; };
+		DD5CDDC32A12973C007C64BA /* Class_Edit_Data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Class_Edit_Data.h; sourceTree = "<group>"; };
 		DDEF1B792A10FE200028E235 /* DB_Of_Students */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DB_Of_Students; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDEF1B7C2A10FE200028E235 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -57,9 +59,19 @@
 		DDEF1B7B2A10FE200028E235 /* DB_Of_Students */ = {
 			isa = PBXGroup;
 			children = (
+				DDEF1B842A112D2D0028E235 /* Classes */,
 				DDEF1B7C2A10FE200028E235 /* main.cpp */,
 			);
 			path = DB_Of_Students;
+			sourceTree = "<group>";
+		};
+		DDEF1B842A112D2D0028E235 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				DD5CDDC22A12871B007C64BA /* Class_Student.h */,
+				DD5CDDC32A12973C007C64BA /* Class_Edit_Data.h */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
