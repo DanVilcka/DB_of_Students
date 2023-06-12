@@ -6,51 +6,73 @@
 //
 
 #include <iostream>
+#include <string>
+#include <unistd.h>
+
 #include "Class_Student.h"
+#include "Class_Menu.h"
+
+
+void clean_c(){
+    for (int i = 0; i < 30; i++) {
+        cout << " " << endl;
+    }
+}
+
 
 int main()
 {
-    // Создание объекта класса Student
-    Students student;
-
-    std::string name;
-    std::string last_name;
-
-    // Ввод имени с клавиатуры
-    std::cout << "Name: ";
-    getline(std::cin, name);
-
-    // Ввод фамилии
-    std::cout << "Last name: ";
-    getline(std::cin, last_name);
-
-    // Сохранение имени и фамилии в объект класса Students
-    student.set_name(name);
-    student.set_last_name(last_name);
-
-    // Оценки
-    int scores[5];
-    // Сумма всех оценок
-    int sum = 0;
-
-    // Ввод промежуточных оценок
-    for (int i = 0; i < 5; ++i) {
-        std::cout << "Score " << i+1 << ": ";
-        std::cin >> scores[i];
-        // суммирование
-        sum += scores[i];
+    
+    Student* st = new Student();
+    
+    ClassMenu* mainMenu = new ClassMenu("\nОсновное меню");
+    mainMenu->addMenuItem("Выход"); // 0
+    mainMenu->addMenuItem("Отобразить данные о студентах"); // 1
+    mainMenu->addMenuItem("Добавить/изменить/удалить данные о студенте"); // 2
+    mainMenu->addMenuItem("Выполнить задание"); // 3
+    int selectedItem = -1;
+    
+    ClassMenu* editMenu = new ClassMenu("\nМеню редактирования");
+    editMenu->addMenuItem("Выход"); // 0
+    editMenu->addMenuItem("Выберите существующего студента"); // 1
+    editMenu->addMenuItem("Создать нового студента"); // 2
+    editMenu->addMenuItem("Удалить студента"); // 3
+    
+    int selectedNum = - 1;
+    
+    
+    while (selectedItem != 0){
+        selectedItem = mainMenu->run();
+        clean_c();
+        switch (selectedItem)
+        {
+            case 1:
+                st->getAllInfoFromFile();
+                break;
+            case 2:
+                while (selectedNum != 0 ) {
+                    selectedNum = editMenu->run();
+                    switch (selectedNum) {
+                        case 1:
+                            st->editExistStudent();
+                            break;
+                        case 2:
+                            st->createNewStudent();
+                            st->addSt2File();
+                            break;
+                        case 3:
+                            st->deleteStudent();
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                break;
+            case 3:
+                st->filterStudents();
+                //st->Marks();
+            deafault:
+                break;
+        }
     }
-
-    // Сохраняем промежуточные оценки в объект класса Student
-    student.set_scores(scores);
-    // Считаем средний балл
-    float average_ball = sum / 5.0;
-    // Сохраняем средний балл в объект класса Students
-    student.set_average_ball(average_ball);
-    // Выводим данные по студенту
-    std::cout << "Average ball for " << student.get_name() << " "
-         << student.get_last_name() << " is "
-         << student.get_average_ball() << std::endl;
-
-    return 0;
 }

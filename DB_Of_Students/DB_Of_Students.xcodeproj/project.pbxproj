@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD57466A2A3734E6000EA2C8 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD5746692A3734DA000EA2C8 /* libcrypto.a */; };
+		DD57466C2A37353A000EA2C8 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD57466B2A373534000EA2C8 /* libssl.a */; };
+		DD57466E2A373687000EA2C8 /* Openssl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DD57466D2A373687000EA2C8 /* Openssl.cpp */; };
 		DDEF1B7D2A10FE200028E235 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DDEF1B7C2A10FE200028E235 /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -23,8 +26,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DD5510C02A1392C800D05FF1 /* Class_List.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Class_List.h; sourceTree = "<group>"; };
+		DD5510C12A13BFDC00D05FF1 /* Class_Menu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Class_Menu.h; sourceTree = "<group>"; };
+		DD5510C22A13C13100D05FF1 /* Data.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Data.txt; sourceTree = "<group>"; };
+		DD5746692A3734DA000EA2C8 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = "../../../../../../../../../../usr/local/Cellar/openssl@3/3.1.1/lib/libcrypto.a"; sourceTree = "<group>"; };
+		DD57466B2A373534000EA2C8 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = "../../../../../../../../../../usr/local/Cellar/openssl@3/3.1.1/lib/libssl.a"; sourceTree = "<group>"; };
+		DD57466D2A373687000EA2C8 /* Openssl.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Openssl.cpp; sourceTree = "<group>"; };
 		DD5CDDC22A12871B007C64BA /* Class_Student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Class_Student.h; sourceTree = "<group>"; };
 		DD5CDDC32A12973C007C64BA /* Class_Edit_Data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Class_Edit_Data.h; sourceTree = "<group>"; };
+		DDC7BEE42A1F867300FBB668 /* Test.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Test.txt; sourceTree = "<group>"; };
 		DDEF1B792A10FE200028E235 /* DB_Of_Students */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DB_Of_Students; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDEF1B7C2A10FE200028E235 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -34,17 +44,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD57466C2A37353A000EA2C8 /* libssl.a in Frameworks */,
+				DD57466A2A3734E6000EA2C8 /* libcrypto.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD5510C32A13C13A00D05FF1 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				DD5510C22A13C13100D05FF1 /* Data.txt */,
+				DDC7BEE42A1F867300FBB668 /* Test.txt */,
+				DD57466D2A373687000EA2C8 /* Openssl.cpp */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		DD5746682A3734DA000EA2C8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DD57466B2A373534000EA2C8 /* libssl.a */,
+				DD5746692A3734DA000EA2C8 /* libcrypto.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DDEF1B702A10FE200028E235 = {
 			isa = PBXGroup;
 			children = (
 				DDEF1B7B2A10FE200028E235 /* DB_Of_Students */,
 				DDEF1B7A2A10FE200028E235 /* Products */,
+				DD5746682A3734DA000EA2C8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,6 +91,7 @@
 		DDEF1B7B2A10FE200028E235 /* DB_Of_Students */ = {
 			isa = PBXGroup;
 			children = (
+				DD5510C32A13C13A00D05FF1 /* Data */,
 				DDEF1B842A112D2D0028E235 /* Classes */,
 				DDEF1B7C2A10FE200028E235 /* main.cpp */,
 			);
@@ -70,6 +103,8 @@
 			children = (
 				DD5CDDC22A12871B007C64BA /* Class_Student.h */,
 				DD5CDDC32A12973C007C64BA /* Class_Edit_Data.h */,
+				DD5510C02A1392C800D05FF1 /* Class_List.h */,
+				DD5510C12A13BFDC00D05FF1 /* Class_Menu.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -131,6 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD57466E2A373687000EA2C8 /* Openssl.cpp in Sources */,
 				DDEF1B7D2A10FE200028E235 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -141,7 +177,7 @@
 		DDEF1B7E2A10FE200028E235 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -193,13 +229,14 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = opt/local/include;
 			};
 			name = Debug;
 		};
 		DDEF1B7F2A10FE200028E235 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -244,6 +281,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = opt/local/include;
 			};
 			name = Release;
 		};
@@ -253,6 +291,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 24DCQ627H6;
 				ENABLE_HARDENED_RUNTIME = YES;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/usr/local/Cellar/openssl@3/3.1.1/lib",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -263,6 +305,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 24DCQ627H6;
 				ENABLE_HARDENED_RUNTIME = YES;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/usr/local/Cellar/openssl@3/3.1.1/lib",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
